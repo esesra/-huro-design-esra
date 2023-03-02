@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "../components/button/Button";
 import Input from "../components/forms/input";
 
 const AccountDeailtsModal = () => {
@@ -19,13 +20,15 @@ const AccountDeailtsModal = () => {
   };
   return (
     <div>
-      <a
-        className="button h-button is-rounded  is-fullwidth h-modal-close"
-        id="popup"
+      <Button
+        isRounded
+        isFullWidth
+        hModalClose
+     
         onClick={togglePopup}
       >
         Popup
-      </a>
+      </Button>
 
       <div
         id="demo-standard-form-modal"
@@ -36,7 +39,9 @@ const AccountDeailtsModal = () => {
           <div class="modal-card">
             <header class="modal-card-head">
               <h3>Change Email Adress</h3>
-              <button
+              <Button
+                hModalClose
+                mlAuto
                 class="h-modal-close ml-auto"
                 aria-label="close"
                 onClick={togglePopup}
@@ -56,7 +61,7 @@ const AccountDeailtsModal = () => {
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
-              </button>
+              </Button>
             </header>
             <div class="modal-card-body">
               <div class="inner-content">
@@ -83,7 +88,7 @@ const AccountDeailtsModal = () => {
                         placeholder="Password"
                       />
                     </div>
-                    <div style={{ margin: "5%"}}>
+                    <div style={{ margin: "5%" }}>
                       <h1 className="is-thin is-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +101,7 @@ const AccountDeailtsModal = () => {
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           class="feather feather-info"
-                          style={{ marginRight: "1%"}}
+                          style={{ marginRight: "1%" }}
                         >
                           <circle cx="12" cy="12" r="10"></circle>
                           <line x1="12" y1="16" x2="12" y2="12"></line>
@@ -111,18 +116,12 @@ const AccountDeailtsModal = () => {
               </div>
             </div>
             <div className="modal-card-foot is-end">
-              <a
-                className="button h-button is-rounded h-modal-close"
-                onClick={togglePopup}
-              >
+              <Button isRounded hModalClose onClick={togglePopup}>
                 Cancel
-              </a>
-              <a
-                className="button h-button is-primary is-raised is-rounded"
-                onClick={handleSubmit}
-              >
+              </Button>
+              <Button isRounded isPrimary isRaised onClick={handleSubmit}>
                 Change Email Adress
-              </a>
+              </Button>
             </div>
           </div>
         </div>
