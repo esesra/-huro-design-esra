@@ -24,6 +24,9 @@ export const Button = ({
 	isDisabled,
 	isFullWidth,
 	iconType,
+	hModalClose,
+	mlAuto,
+	onClick,
 	...rest
 }) => {
 	const getButtonClasses = () => {
@@ -57,13 +60,16 @@ export const Button = ({
 		isDisabled && classes.push('is-disabled');
 
 		isFullWidth && classes.push('is-fullwidth');
+		hModalClose && classes.push('h-modal-close');
+		mlAuto && classes.push('ml-auto');
+
 
 		return classes.join(' ');
 	};
 
 	return (
 		<>
-			<button {...rest} className={`button h-button ${getButtonClasses()}`}>
+			<button {...rest} className={`button h-button ${getButtonClasses()}`} onClick={onClick}>
 				{icon && (
 					<span className={`icon ${iconSmall && 'is-small'}`}>
 						<i className={`fas fa-${iconType}`}></i>
@@ -71,6 +77,7 @@ export const Button = ({
 				)}
 
 				<span>{children}</span>
+
 			</button>
 		</>
 	);

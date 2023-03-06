@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AccountDeailtsModal from '../pages/account-deails-modal';
 import AdminNotificationPage from '../pages/admin-profile-notifications';
 import CardPage from '../pages/card-page';
 import CreateButtonPage from '../pages/create-button-page';
@@ -22,7 +23,7 @@ const CustomRoutes = () => {
                     <Route path="createbutton" element={<GeneralTemplate><CreateButtonPage  /></GeneralTemplate>} />
                     <Route path="cards" element={<GeneralTemplate><CardPage /></GeneralTemplate>} />
                     <Route path="notification" element={<GeneralTemplate><AdminNotificationPage /></GeneralTemplate>} />
-
+                    <Route path="accountdetailsmodal" element={<GeneralTemplate><AccountDeailtsModal /></GeneralTemplate>} />
                     </Route>
                  
             </Routes>
